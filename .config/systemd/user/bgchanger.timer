@@ -1,0 +1,14 @@
+# simple timer to call bgchanger.service
+# useful if if you want to change backgrounds every certain amount of time
+# see ~/.fehbg for doing that
+
+[Unit]
+Description=Change backgrounds every 5 minutes
+
+[Timer]
+OnActiveSec=5sec
+OnUnitActiveSec=5min
+Unit=bgchanger.service
+
+[Install]
+WantedBy=bgchanger.service
