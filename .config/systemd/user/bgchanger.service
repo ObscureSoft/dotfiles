@@ -1,0 +1,14 @@
+# simple service to execute ~/.fehbg
+# useful if if you want to change backgrounds every certain amount of time
+# see ~/.fehbg for doing that
+
+[Unit]
+Description=Change backgrounds at regular intervals
+
+[Service]
+Type=oneshot
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/bash %h/.fehbg
+
+[Install]
+WantedBy=default.target
